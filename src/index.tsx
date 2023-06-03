@@ -4,15 +4,37 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/home/home';
 import 'bootstrap/dist/css/bootstrap.css';
-// Put any other imports below so that CSS from your
-// components takes precedence over default styles.
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Register from './pages/authentication/Register';
+import Login from './pages/authentication/Login';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    // errorElement: <ErrorPage />,
+  },
+  {
+    path:'/register', 
+    element: <Register/>
+  }, 
+  {
+    path:'/login', 
+    element: <Login/>
+  }
+
+]);
+
 root.render(
   <React.StrictMode>
-    <Home/>
+    <RouterProvider router={router}/>
   </React.StrictMode>
 );
 
