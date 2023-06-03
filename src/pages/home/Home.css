@@ -1,0 +1,17 @@
+.hero{
+    background-image: url('https://media.istockphoto.com/id/1341446055/vector/futuristic-concept-of-global-economics-suitable-for-world-financial-technology-economic.jpg?s=1024x1024&w=is&k=20&c=TnBEatsZCobB72X6S3YL_tGqjAcRBpSQHcoynvHXNVI=');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    color: white;
+    /* bottom: 50%; */
+    /* padding-top: 4rem; */
+}
