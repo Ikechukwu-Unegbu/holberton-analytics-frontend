@@ -12,7 +12,7 @@ This is front end of a web analytics application. This applications tracks traff
 
 
 ## Author 
-**Ikechukwu Vincent - Full Stack Software Engineer** 
+**Ikechukwu Vincent - Full Stack Software Engineer**  
 [LinkedIn](https://www.linkedin.com/in/ikechukwu-vincent-002934176/)  
 [Twitter](https://twitter.com/TheV_Exe)  
 [Facebook](https://web.facebook.com/ikechukwu.unegbu.14/)  
