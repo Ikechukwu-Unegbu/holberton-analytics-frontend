@@ -2,7 +2,7 @@
 ### by Ikechukwu Vincent
 
 ## Introduction 
-This is front end of a web analytics application. This applications tracks traffic of registered websites and provides insight to user interaction with the site in real time. The inspiration behind this project was to gain deeper understanding into how giant services like server monitoring and web analytic tool like Google Analytics work. 
+This is front end of a web analytics application. This applications tracks traffic of registered websites and provides insight into user interaction with the site in real time. The inspiration behind this project was to gain deeper understanding into how giant services like server monitoring and web analytic tool. 
 
 
 ## Tech Stack 
