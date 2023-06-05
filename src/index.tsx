@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import Register from './pages/authentication/Register';
 import Login from './pages/authentication/Login';
+import Dashboard from './pages/dashboard/Dashboard';
 
 
 const root = ReactDOM.createRoot(
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path:'/login', 
     element: <Login/>
+  },
+  {
+    path:'/dashboard',
+    element:<Dashboard/>
   }
 
 ]);
