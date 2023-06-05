@@ -12,6 +12,40 @@
 
 .title{
     color: white;
-    /* bottom: 50%; */
-    /* padding-top: 4rem; */
+}
+.price{
+    display:flex;
+    flex-direction:row;
+    grid-gap:2rem;
+    margin-top:3rem;
+}
+
+.plan-card{
+    width:50% !important;
+    padding: 3rem;
+
+    box-shadow: 0 0 8px gainsboro;
+}
+.center {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deet-container{
+    display: flex;
+    flex-direction:column;
+    grid-gap: 1.5rem;
+    justify-content: center;
+    /* align-items: center; */
+    margin-bottom: 2rem;
+}
+
+.deets{
+    display: flex;
+    grid-gap: 1.4rem;
+}
+
+.plan-card .btn{
+    width: 12rem;
 }

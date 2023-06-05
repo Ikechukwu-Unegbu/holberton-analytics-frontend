@@ -1,5 +1,5 @@
-
 import React, { useState } from 'react';
+import './Auth.css'
 
 interface RegisterProps {
   // Define any props you need for the component
