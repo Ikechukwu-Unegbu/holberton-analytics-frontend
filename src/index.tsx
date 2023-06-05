@@ -11,6 +11,8 @@ import {
 import Register from './pages/authentication/Register';
 import Login from './pages/authentication/Login';
 import Dashboard from './pages/dashboard/Dashboard';
+import Newsite from './pages/dashboard/sites/Newsite';
+import Profile from './pages/profile/Profile';
 
 
 const root = ReactDOM.createRoot(
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
   {
     path:'/dashboard',
     element:<Dashboard/>
+  },
+  {
+    path:'/dashboard/new-site',
+    element: <Newsite/>
+  },
+  {
+    path:'/dashboard/profile',
+    element: <Profile/>
   }
 
 ]);

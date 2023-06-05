@@ -1,11 +1,11 @@
 import React from 'react';
 import DashMenu from '../components/DashMenu';
  
-type DashboardProps = {
+type ProfileProps = {
   // Define the props you want to pass to the component
 };
 
-const Dashboard: React.FC<DashboardProps> = (props) => {
+const Profile: React.FC<ProfileProps> = (props) => {
   // Access and use the props within the component
   return (
     <div> 
@@ -14,4 +14,4 @@ const Dashboard: React.FC<DashboardProps> = (props) => {
   );
 };
 
-export default Dashboard;
+export default Profile;
