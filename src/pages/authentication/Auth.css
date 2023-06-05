@@ -1,0 +1,15 @@
+.auth{
+    display: flex;
+    flex-direction: row;
+    grid-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-left, .auth-right{
+    width: 50% ;
+}
+
+.auth-right{
+    padding-right: 1.4rem;
+}
