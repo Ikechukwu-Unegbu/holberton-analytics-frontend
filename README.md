@@ -1,4 +1,4 @@
-# ALX - Holberton School of Software Engineering Second/Final Portfolio Project
+# ALX - Holberton Second/Final Portfolio Project
 ### by Ikechukwu Vincent
 
 ## Introduction 
