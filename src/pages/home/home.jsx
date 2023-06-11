@@ -1,7 +1,7 @@
 import React from 'react';
 import Menu from '../components/Menu';
 import './Home.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Footer from '../components/Footer';
 
 function Home() {
@@ -90,7 +90,7 @@ function Home() {
               </div>
              </div>
               <div className="button_holder">
-                <button className="btn btn-primary">Get Started </button>
+                <a href="/register" className="btn btn-primary">Get Started </a>
               </div>
           </div>
         </div>
