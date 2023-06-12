@@ -14,9 +14,9 @@ function DashMenu() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="primary" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">H&A</Navbar.Brand>
+        <Navbar.Brand className="text-light" href="#">H&A</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -25,18 +25,18 @@ function DashMenu() {
             navbarScroll
           >
             
-            <Nav.Link href="#action2" onClick={handleShow}>Sidebar </Nav.Link>
+            <Nav.Link href="#action2"className="text-light"  onClick={handleShow}>Sidebar </Nav.Link>
             <NavDropdown title="Links" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="/admin/sites">Sites</NavDropdown.Item>
-              <NavDropdown.Item href="/admin/users">
+              <NavDropdown.Item className="text-dark" href="/admin/sites">Sites</NavDropdown.Item>
+              <NavDropdown.Item className="text-dark" href="/admin/users">
                 Users 
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
+              <NavDropdown.Item className="text-dark" href="#action5">
                 Something else here
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="dashboard/profile">
+            <Nav.Link className='text-light' href="dashboard/profile">
                 Profile
             </Nav.Link>
           </Nav>
@@ -49,8 +49,8 @@ function DashMenu() {
             />
            <div className="form-group">
            
-              <select class="form-control" id="floatingSelect" aria-label="Floating label select example">
-                <option selected>Open this select menu</option>
+              <select className="form-control" id="floatingSelect" aria-label="Floating label select example">
+                <option defaultValue>Open this select menu</option>
                 <option value="users">Users</option>
                 <option value="sites">Sites</option>
                 {/* <option value="3">Three</option> */}
@@ -58,7 +58,7 @@ function DashMenu() {
             
            </div>
 
-            <Button variant="outline-success">Search</Button>
+            <Button className='btn-dark'>Search</Button>
           </Form>
         </Navbar.Collapse>
       </Container>

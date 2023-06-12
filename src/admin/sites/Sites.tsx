@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface SitesProps {
-  title: string;
+  // title: string;
 }
 
 const Sites: React.FC<SitesProps> = () => {

@@ -16,6 +16,9 @@ import Newsite from './pages/dashboard/sites/Newsite';
 import Profile from './pages/profile/Profile';
 import AdminHome from './admin/home/Adminhome'
 import Users from './admin/users/Users'
+import Search from './admin/search/Search';
+import Sites from './admin/sites/Sites';
+import User from './admin/users/User';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -53,6 +56,18 @@ const router = createBrowserRouter([
   {
     path:'/admin/users',
     element:<Users  users={[]}/>
+  },
+  {
+    path:'/admin/search',
+    element:<Search/>
+  },
+  {
+    path:'/admin/sites',
+    element:<Sites/>
+  },
+  {
+    path:'/admin/user/id',
+    element:<User/>
   }
 ]);
 
