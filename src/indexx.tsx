@@ -5,9 +5,6 @@ import reportWebVitals from './reportWebVitals';
 import Home from './pages/home/home';
 import 'bootstrap/dist/css/bootstrap.css';
 import {
-  BrowserRouter as Routerr,
-  Routes,
-  Route,
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
@@ -23,31 +20,61 @@ import Users from './admin/users/Users'
 import Search from './admin/search/Search';
 import Sites from './admin/sites/Sites';
 import User from './admin/users/User';
-import ProtectedRoute from './ProtectedRoute';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    // errorElement: <ErrorPage />,
+  },
+  {
+    path:'/register', 
+    element: <Register/>
+  }, 
+  {
+    path:'/login', 
+    element: <Login/>
+  },
+  {
+    path:'/dashboard',
+    element:<Dashboard/>
+  },
+  {
+    path:'/dashboard/new-site',
+    element: <Newsite/>
+  },
+  {
+    path:'/dashboard/profile',
+    element: <Profile/>
+  },
+  {
+    path:'/admin',
+    element:<AdminHome/>
+  },
+  {
+    path:'/admin/users',
+    element:<Users  users={[]}/>
+  },
+  {
+    path:'/admin/search',
+    element:<Search/>
+  },
+  {
+    path:'/admin/sites',
+    element:<Sites/>
+  },
+  {
+    path:'/admin/user/id',
+    element:<User/>
+  }
+]);
 
 root.render(
   <React.StrictMode>
-    <Routerr>
-      <Routes>
-        <Route path='/login' element={<Login/>}></Route>
-        <Route path='/' element={<Home/>}></Route>
-        
-        <Route path="/dashboard" element={<ProtectedRoute user={{}}><Dashboard/></ProtectedRoute>} />
-        <Route path="/dashboard/profile" element={<ProtectedRoute user={{}}><Profile/></ProtectedRoute>} />
-        <Route path="/dashboard/new-site" element={<ProtectedRoute user={{}}><Newsite/></ProtectedRoute>} />
-        <Route path="/admin" element={<ProtectedRoute user={{}}><AdminHome/></ProtectedRoute>} />
-        <Route path="/admin/sites" element={<ProtectedRoute user={{}}><Sites/></ProtectedRoute>} />
-        <Route path="/admin/users" element={<ProtectedRoute user={{}}><Users users={[]}/></ProtectedRoute>} />
-        <Route path="/admin/user/:id" element={<ProtectedRoute user={{}}><User/></ProtectedRoute>} />
-        <Route path="/admin/search" element={<ProtectedRoute user={{}}><Search/></ProtectedRoute>} />
-
-      </Routes>
-    </Routerr>
-
+    <RouterProvider router={router}/>
   </React.StrictMode>
 );
 
