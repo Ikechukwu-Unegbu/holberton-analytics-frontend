@@ -1,0 +1,14 @@
+.profile-container, .img-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+    margin-top: 1.4rem;
+}
+
+
+.btn_edit{
+    /* display: flex; */
+    float: right;
+}

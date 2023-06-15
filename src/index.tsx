@@ -24,6 +24,7 @@ import Search from './admin/search/Search';
 import Sites from './admin/sites/Sites';
 import User from './admin/users/User';
 import ProtectedRoute from './ProtectedRoute';
+import SiteList from './pages/dashboard/sites/SiteList';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -38,6 +39,7 @@ root.render(
         
         <Route path="/dashboard" element={<ProtectedRoute user={{}}><Dashboard/></ProtectedRoute>} />
         <Route path="/dashboard/profile" element={<ProtectedRoute user={{}}><Profile/></ProtectedRoute>} />
+        <Route path="/dashboard/sites" element={<ProtectedRoute user={{}}><SiteList/></ProtectedRoute>} />
         <Route path="/dashboard/new-site" element={<ProtectedRoute user={{}}><Newsite/></ProtectedRoute>} />
         <Route path="/admin" element={<ProtectedRoute user={{}}><AdminHome/></ProtectedRoute>} />
         <Route path="/admin/sites" element={<ProtectedRoute user={{}}><Sites/></ProtectedRoute>} />
