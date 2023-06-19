@@ -1,0 +1,5 @@
+.metric-container{
+    display: flex;
+    flex-direction:row;
+    grid-gap: 1rem;
+}

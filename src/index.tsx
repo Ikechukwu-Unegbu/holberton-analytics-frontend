@@ -8,12 +8,10 @@ import {
   BrowserRouter as Routerr,
   Routes,
   Route,
-  createBrowserRouter,
-  RouterProvider,
 } from "react-router-dom";
 // import 
 // import {RegisterProps} from './pages/authentication/Register'
-import Register from './pages/authentication/Register';
+// import Register from './pages/authentication/Register';
 import Login from './pages/authentication/Login';
 import Dashboard from './pages/dashboard/Dashboard';
 import Newsite from './pages/dashboard/sites/Newsite';
