@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import DashMenu from '../components/DashMenu';
 import SitesDropdown from './component/SitesDropdown';
 import DurationsDropdown from './component/DurationsDropdown';
-import {PRODUCTION_BASE_URL, API_BASE_URL} from '../../config.js'
+import {API_BASE_URL} from '../../config.js'
 
 type Site = {
   id: string;
@@ -55,12 +55,12 @@ const Dashboard: React.FC<DashboardProps> = (props) => {
 
   useEffect(() => {
     const callAnalyticsAPI = () => {
-      const userId = localStorage.getItem('ha_user');
-      const storedUserId = userId ? JSON.parse(userId) : null;
+      // const userId = localStorage.getItem('ha_user');
+      // const storedUserId = userId ? JSON.parse(userId) : null;
       const token = localStorage.getItem('ha_accessToken')
 
-      fetch(`${API_BASE_URL}/user/sites/analytics/${selectedDuration}/${selectedSite}`, {
-        headers: {
+      fetch(`${API_BASE_URL}/analytics/${selectedDuration}/${selectedSite}`, {
+        headers: { 
           Authorization: `Bearer ${token}`,
         },
       }) 

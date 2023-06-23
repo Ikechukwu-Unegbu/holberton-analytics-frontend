@@ -9,7 +9,7 @@ import MetricBox from './components/MetricBox';
 const AdminHome = () => {
   const [sites, setSites] = useState([]);
   const [users, setUsers] = useState([]);
-  const [pagination, setPagination] = useState({ totalCount: 0, totalPages: null });
+  // const [pagination, setPagination] = useState({ totalCount: 0, totalPages: null });
 
   useEffect(() => {
     const token = localStorage.getItem('ha_accessToken');
@@ -23,7 +23,7 @@ const AdminHome = () => {
       .then((response) => response.json())
       .then((data) => {
         setSites(data.sites);
-        setPagination(data.pagination);
+        // setPagination(data.pagination);
       })
       .catch((error) => {
         console.error('Error fetching sites:', error);
