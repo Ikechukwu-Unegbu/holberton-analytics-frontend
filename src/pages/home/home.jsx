@@ -2,6 +2,7 @@ import React from 'react';
 import Menu from '../components/Menu';
 import './Home.css'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 
 function Home() {
@@ -52,7 +53,8 @@ function Home() {
               </div>
              </div>
               <div className="button_holder">
-                <a href='/register' className="btn btn-primary">Get Started </a>
+              <Link className="btn btn-primary" to="/register" >Get Started</Link>
+                {/* <a href='/register' className="btn btn-primary">Get Started </a> */}
               </div>
           </div>
         </div>
@@ -90,7 +92,8 @@ function Home() {
               </div>
              </div>
               <div className="button_holder">
-                <a href="/register" className="btn btn-primary">Get Started </a>
+                <Link className="btn btn-primary" to="/register" >Get Started</Link>
+                {/* <a href="/register" className="btn btn-primary">Get Started </a> */}
               </div>
           </div>
         </div>
