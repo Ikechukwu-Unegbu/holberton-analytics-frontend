@@ -35,13 +35,13 @@ export default function Footer(){
                         </div>
                         <div className="bottom">
                             <a href="/dummy">
-                                <i class="fa-brands fa-2x fa-square-facebook"></i>
+                                <i className="fa-brands fa-2x fa-square-facebook"></i>
                             </a>
                             <a href="/dummy">
-                                <i class="fa-brands fa-2x fa-linkedin"></i>
+                                <i className="fa-brands fa-2x fa-linkedin"></i>
                             </a>
                             <a href="/dummy">
-                                <i class="fa-brands fa-2x fa-square-twitter"></i>
+                                <i className="fa-brands fa-2x fa-square-twitter"></i>
                             </a>
                         </div>
                     </div>

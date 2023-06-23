@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 // import 
 // import {RegisterProps} from './pages/authentication/Register'
-// import Register from './pages/authentication/Register';
+import Register from './pages/authentication/Register';
 import Login from './pages/authentication/Login';
 import Dashboard from './pages/dashboard/Dashboard';
 import Newsite from './pages/dashboard/sites/Newsite';
@@ -33,6 +33,7 @@ root.render(
     <Routerr>
       <Routes>
         <Route path='/login' element={<Login/>}></Route>
+        <Route path='/register' element={<Register/>}></Route>
         <Route path='/' element={<Home/>}></Route>
         
         <Route path="/dashboard" element={<ProtectedRoute user={{}}><Dashboard/></ProtectedRoute>} />

@@ -14,7 +14,7 @@ function Home() {
         <h1 className="text-center text-light  title">Holberton Analytics</h1>
       </div>
 
-      <div class="intro">
+      <div className="intro">
 
       </div>
       {/* PRICE CONTAINER */}
@@ -29,25 +29,25 @@ function Home() {
              <div className="deet-container">
              <div className="deets">
                 <span className="key">
-                  <i class="fa-solid fa-circle-dot"></i>
+                  <i className="fa-solid fa-circle-dot"></i>
                 </span>
                 <span className="val">Web Origin</span>
               </div>
               <div className="deets">
                 <span className="key">
-                  <i class="fa-solid fa-circle-dot"></i>
+                  <i className="fa-solid fa-circle-dot"></i>
                 </span>
                 <span className="val">Geolocation</span>
               </div>
               <div className="deets">
                 <span className="key">
-                  <i class="fa-solid fa-circle-dot"></i>
+                  <i className="fa-solid fa-circle-dot"></i>
                 </span>
                 <span className="val">Exit</span>
               </div>
               <div className="deets">
                 <span className="key">
-                  <i class="fa-solid fa-circle-dot"></i>
+                  <i className="fa-solid fa-circle-dot"></i>
                 </span>
                 <span className="val">User Agent</span>
               </div>
@@ -68,25 +68,25 @@ function Home() {
              <div className="deet-container">
              <div className="deets">
                 <span className="key">
-                  <i class="fa-solid fa-circle-dot"></i>
+                  <i className="fa-solid fa-circle-dot"></i>
                 </span>
                 <span className="val">Web Origin</span>
               </div>
               <div className="deets">
                 <span className="key">
-                  <i class="fa-solid fa-circle-dot"></i>
+                  <i className="fa-solid fa-circle-dot"></i>
                 </span>
                 <span className="val">Geolocation</span>
               </div>
               <div className="deets">
                 <span className="key">
-                  <i class="fa-solid fa-circle-dot"></i>
+                  <i className="fa-solid fa-circle-dot"></i>
                 </span>
                 <span className="val">Exit</span>
               </div>
               <div className="deets">
                 <span className="key">
-                  <i class="fa-solid fa-circle-dot"></i>
+                  <i className="fa-solid fa-circle-dot"></i>
                 </span>
                 <span className="val">User Agent</span>
               </div>
