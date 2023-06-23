@@ -11,10 +11,10 @@ export default function Footer(){
                         <div className="">
                             <ul>
                                 <li><h5 className="text-left text-light">Holberton Analytics</h5></li>
-                                <li><a href="">About HA</a></li>
-                                <li><a href="">Products</a></li>
-                                <li><a href="">Services</a></li>
-                                <li><a href="">Careers</a></li>
+                                <li><a href="#">About HA</a></li>
+                                <li><a href="#">Products</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Careers</a></li>
                             </ul>
                         </div>
                     </div>
@@ -22,10 +22,10 @@ export default function Footer(){
                         <div className="">
                             <ul>
                                 <li><h5 className="text-left text-light">Resources</h5></li>
-                                <li><a href="">Documentation</a></li>
-                                <li><a href="">Frontend Codebase</a></li>
-                                <li><a href="">Backend Codebase</a></li>
-                                <li><a href="">Contribution</a></li>
+                                <li><a href="#">Documentation</a></li>
+                                <li><a href="#">Frontend Codebase</a></li>
+                                <li><a href="#">Backend Codebase</a></li>
+                                <li><a href="#">Contribution</a></li>
                             </ul>
                         </div>
                     </div>
@@ -34,24 +34,24 @@ export default function Footer(){
                             <h4 className="text-center text-light">Ikechukwu Vincent - Software Engineer </h4>
                         </div>
                         <div className="bottom">
-                            <a href="">
+                            <a href="#">
                                 <i class="fa-brands fa-2x fa-square-facebook"></i>
                             </a>
-                            <a href="">
+                            <a href="#">
                                 <i class="fa-brands fa-2x fa-linkedin"></i>
                             </a>
-                            <a href="">
+                            <a href="#">
                                 <i class="fa-brands fa-2x fa-square-twitter"></i>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div className="footer_bottom">
-                    <a href=""><span className="text-light text-center">Copyright reserved</span></a>
+                    <a href="#"><span className="text-light text-center">Copyright reserved</span></a>
                     <span></span>
-                    <a href="">Authored by Ikechukwu Vincent</a>
+                    <a href="#">Authored by Ikechukwu Vincent</a>
                     <span></span>
-                    <a href="">Holberton 2023</a>
+                    <a href="#">Holberton 2023</a>
                 </div>
             </div>
         </Fragment>

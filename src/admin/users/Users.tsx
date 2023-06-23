@@ -12,17 +12,7 @@ interface UsersProps {
 }
 
 const Users: React.FC<UsersProps> = () => {
-  const userList1: User[] = [
-    { id: 1, name: 'John Doe', email: 'john@example.com' },
-    { id: 2, name: 'Jane Smith', email: 'jane@example.com' },
-  ];
 
-  const userList2: User[] = [
-    { id: 3, name: 'Bob Johnson', email: 'bob@example.com' },
-    { id: 4, name: 'Alice Brown', email: 'alice@example.com' },
-  ];
-
-  const users: User[][] = [userList1, userList2];
 
   return (
     <Fragment>

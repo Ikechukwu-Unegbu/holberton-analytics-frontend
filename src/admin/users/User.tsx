@@ -3,11 +3,11 @@ import DashMenu from '../components/DashMenu';
 import './index.css';
 
 
-interface User {
-  id: number;
-  name: string;
-  email: string;
-}
+// interface User {
+//   id: number;
+//   name: string;
+//   email: string;
+// }
 
 interface UserProps {
   // users: User[][];

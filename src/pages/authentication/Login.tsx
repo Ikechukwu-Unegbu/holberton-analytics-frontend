@@ -9,7 +9,7 @@ interface LoginProps {
 const Login: React.FC<LoginProps> = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
+
 
   const handleRegister = () => {
     // Handle the registration logic here
