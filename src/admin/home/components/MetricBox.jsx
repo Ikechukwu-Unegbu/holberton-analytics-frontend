@@ -7,9 +7,9 @@ export default function MetricBox(props){
         <React.Fragment>
             <div className=" container metric-container mt-3">
                {/* <div className="box"> */}
-                    <MetricCard title="Total Request" text="50000"/>
-                    <MetricCard title="Total Users" text="100"/>
-                    <MetricCard title="Total Sites" text="230"/>
+                    <MetricCard title="Total Request" text={props.metrics.totalAnalyics}/>
+                    <MetricCard title="Total Users" text={props.metrics.totalUsers}/>
+                    <MetricCard title="Total Sites" text={props.metrics.totalSites}/>
                {/* </div> */}
             </div>
         </React.Fragment>

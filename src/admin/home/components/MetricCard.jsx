@@ -8,8 +8,9 @@ function MetricCard(props) {
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
         <Card.Text>
-            {props.text}
-        </Card.Text>
+        {props.text < 1 || isNaN(props.text) ? 0 : props.text}
+      </Card.Text>
+
         <Button variant="primary">More</Button>
       </Card.Body>
     </Card>

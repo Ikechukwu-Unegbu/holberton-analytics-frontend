@@ -190,7 +190,7 @@ window.addEventListener('load', function() {
     //   console.log(eventData)
       let url;
         if(type=='load'){
-            url = 'register-load/user/request'
+            url = 'register-load/'+accountIdentifier+'/'+siteIdentifier
         }else if(type == 'events'){
             url = 'register-event/'+accountIdentifier+'/'+siteIdentifier
         }
@@ -258,7 +258,7 @@ window.addEventListener('load', function() {
     // Attach event listeners to track page view and click events
     trackPageView()
     // window.addEventListener('load', trackPageView);
-    localStorage.clear();
+    // localStorage.clear();
     
 });
   
