@@ -1,0 +1,15 @@
+.code-holder{
+    background-color: rgb(197, 197, 192);
+    padding: 1rem;
+}
+
+.code{
+    color: black;
+    /* font-size: large; */
+    font-weight: bold;
+    /* background-color: blue; */
+}
+
+.code-btn{
+    float:right;
+}

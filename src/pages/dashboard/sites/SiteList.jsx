@@ -3,15 +3,21 @@ import DashMenu from "../../components/DashMenu";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import './Sites.css';
+import { Link } from "react-router-dom";
+import CodeSnippet from './components/CodeSnippet'
 // import { Link } from "react-router-dom";
 
 const SiteList = () => {
+
   const [sites, setSites] = useState([]);
   const [userId, setUserId] = useState("");
   const [accessToken, setAccessToken] = useState("");
   const [selectedSite, setSelectedSite] = useState(null);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
+  const [showCodeModal, setCodeModal] = useState(false);
+  const userprofile = localStorage.getItem("ha_user");
+  const storeduserprofile = userprofile ? JSON.parse(userprofile) : null;
 
   useEffect(() => {
     const userId = localStorage.getItem("ha_user");
@@ -29,8 +35,7 @@ const SiteList = () => {
   }, []);
 
   useEffect(() => {
-    // const storedAccessToken = localStorage.getItem("ha_accessToken");
-    // const token
+   
     const userId = localStorage.getItem("ha_user");
     const storedUserId = userId ? JSON.parse(userId) : null;
     const fetchSites = async () => {
@@ -67,9 +72,18 @@ const SiteList = () => {
     setShowDeleteModal(true);
   };
 
+  const handleSiteCode = (site) => {
+    setSelectedSite(site);
+    setCodeModal(true);
+  };
+
   const handleCloseDeleteModal = () => {
     setSelectedSite(null);
     setShowDeleteModal(false);
+  };
+  const handleCloseCodeModal = () => {
+    setSelectedSite(null);
+    setCodeModal(false);
   };
 
   const handleDeleteSite = async () => {
@@ -106,6 +120,9 @@ const SiteList = () => {
       <DashMenu />
       <h3 className="text-center text-secondary">Site List</h3>
       <div className="container">
+        <Link to="/dashboard/new-site" style={{ float:"right" }} className="btn btn-sm btn-primary">Create New Site</Link>
+      </div>
+      <div className="container">
         <table className="table">
           <thead>
             <tr>
@@ -122,7 +139,7 @@ const SiteList = () => {
                 <td>{site.name}</td>
                 <td>{site.primary}</td>
                 <td className="action_holder">
-                  <button className="btn btn-sm btn-primary">View</button>
+                  <button className="btn btn-sm btn-primary" onClick={()=>handleSiteCode(site)}>Code</button>
                   <button className="btn btn-danger btn-sm" onClick={() => handleDeleteClick(site)}>Del</button>
                   <button className="btn btn-sm btn-primary" onClick={() => handleEditClick(site)}>Edit</button>
                 </td>
@@ -151,6 +168,25 @@ const SiteList = () => {
           <Button variant="danger" onClick={handleDeleteSite}>
             Delete site
           </Button>
+        </Modal.Footer>
+      </Modal>
+
+      <Modal show={showCodeModal} onHide={handleCloseCodeModal} backdrop="static" keyboard={false}>
+        <Modal.Header closeButton>
+          <Modal.Title>Tracking Code</Modal.Title>
+        </Modal.Header>
+        {selectedSite && (
+          <Modal.Body>
+            <CodeSnippet accountId={storeduserprofile._id} websiteId={selectedSite._id} />
+          </Modal.Body>
+        )}
+        <Modal.Footer>
+          {/* <Button variant="secondary" onClick={handleCloseDeleteModal}>
+            Close
+          </Button>
+          <Button variant="danger" >
+            Delete site
+          </Button> */}
         </Modal.Footer>
       </Modal>
 

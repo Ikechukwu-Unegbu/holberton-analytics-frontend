@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import DashMenu from '../../components/DashMenu';
 import './Sites.css';
+import { Link } from 'react-router-dom';
 
 type NewsiteProps = {
   // Define the props you want to pass to the component
@@ -57,7 +58,7 @@ const Newsite: React.FC<NewsiteProps> = (props) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log('posted')
+        // console.log('posted')
         console.log(data)
         setMessage("Form submitted successfully!");
         // Clear the form fields
@@ -75,10 +76,14 @@ const Newsite: React.FC<NewsiteProps> = (props) => {
   return (
     <div>
       <DashMenu />
+      
       <div className="container p-4">
         <form onSubmit={handleSubmit}>
           <div className="form-group mt-2">
             <h4 className="text-dark text-center">Add Site to Track</h4>
+          </div>
+          <div className="container">
+            <Link className='btn btn-sm btn-primary' style={{float:'right'}} to="/dashboard/sites">My Site List</Link>
           </div>
           <div className="form-group mt-3">
             <label htmlFor="" className="form-label">

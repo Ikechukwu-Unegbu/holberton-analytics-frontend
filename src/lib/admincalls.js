@@ -37,3 +37,50 @@ export const getAdminMetric = async () => {
     }
   };
   
+
+  export const getUserById = async (id) => {
+    try {
+      const token = localStorage.getItem('ha_accessToken');
+  
+      const response = await fetch(`${API_BASE_URL}/admin/user/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to fetch user by ID');
+      }
+  
+      const user = await response.json();
+      return user;
+    } catch (error) {
+      console.error('Error fetching user by ID:', error);
+      throw error;
+    }
+  };
+  
+
+
+  export const getSitesByOwner = async (userId) => {
+    try {
+      const token = localStorage.getItem('accessToken');
+  
+      const response = await fetch(`${API_BASE_URL}/admin/user-sites/${userId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to fetch sites by owner');
+      }
+  
+      const sites = await response.json();
+      return sites;
+    } catch (error) {
+      console.error('Error fetching sites by owner:', error);
+      throw error;
+    }
+  };
+  

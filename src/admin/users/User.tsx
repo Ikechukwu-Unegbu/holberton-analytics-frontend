@@ -1,20 +1,61 @@
 import React, { Fragment } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import DashMenu from '../components/DashMenu';
 import './index.css';
+import { getUserById, getSitesByOwner } from '../../lib/admincalls';
 
-
-// interface User {
-//   id: number;
-//   name: string;
-//   email: string;
-// }
+interface Site {
+  // Define the properties of the Site model
+  _id:string;
+  name:string;
+  url:string;
+}
 
 interface UserProps {
   // users: User[][];
+  // fullname: string;
+  // username: string;
+  // email: string;
 }
 
 const User: React.FC<UserProps> = () => {
+  
+  const [user, setUser] = useState({
+    fullname: '',
+    username: '',
+    email: '',
+  });
+  // console.log(userid)
+  const [sites, setSites] = useState<Site[]>([]);
 
+  const { userid } = useParams<{ userid: string }>();
+  useEffect(() => {
+    
+    const fetchUser = async () => {
+       
+      try {
+        // const userId = '123'; // Replace with the actual user ID
+        const fetchedUser = await getUserById(userid);
+        setUser(fetchedUser);
+      } catch (error) {
+        console.error('Error fetching user:', error);
+      }
+    };
+
+    const fetchSites = async () => {
+      try {
+        const fetchedSites = await getSitesByOwner(userid);
+        setSites(fetchedSites);
+        console.log(fetchedSites)
+      } catch (error) {
+        console.error('Error fetching sites:', error);
+      }
+    };
+
+    fetchUser();
+    fetchSites()
+  }, [userid]);
   return (
     <Fragment>
       <DashMenu/>
@@ -29,25 +70,27 @@ const User: React.FC<UserProps> = () => {
         <div className="deet-container">
           <div className="user-deet mt-4">
             <span className='deet-key'>Fullname: </span>
-            <span>Mr. John Doe</span>
+            <span>{user.fullname}</span>
           </div>
           <div className="user-deet">
               <span className='deet-key'>Username: </span>
-              <span>Mr.JohnDoe</span>
+              <span>{user.username}</span>
           </div>
           <div className="user-deet">
               <span className='deet-key'>Email: </span>
-              <span>email@email.com</span>
+              <span>{user.email}</span>
           </div>
         </div>
         <div className="mt-3 user-sites">
           <h4 className="text-center">User's Sites </h4>
         <ul className="list-group">
-          <li className="list-group-item">An item</li>
-          <li className="list-group-item">A second item</li>
-          <li className="list-group-item">A third item</li>
-          <li className="list-group-item">A fourth item</li>
-          <li className="list-group-item">And a fifth one</li>
+          {sites.map((site) => (
+            <li className="list-group-item" key={site._id}>
+              <Link to={`/site/analytics/${site._id}`}>{site.name} - {site.url}</Link>
+            </li>
+          ))}
+
+
         </ul>
         </div>
       </main>

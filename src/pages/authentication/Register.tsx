@@ -28,6 +28,7 @@ const Register: React.FC = () => {
       .then(data => {
         console.log('Response:', data);
         // Handle the response data here
+        window.location.href = "/login";
       })
       .catch(error => {
         console.log('Error:', error);

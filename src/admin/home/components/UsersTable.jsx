@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function UsersTable({ users }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -35,7 +36,9 @@ export default function UsersTable({ users }) {
             {currentUsers.map((user, index) => (
               <tr key={user._id}>
                 <th scope="row">{index + 1}</th>
-                <td>{user.fullname}</td>
+                <td>
+                  <Link to={`/admin/user/${user._id}`}>{user.fullname}</Link>
+                </td>
                 <td>{user.username}</td>
                 <td>{user.email}</td>
                 <td className="actions">

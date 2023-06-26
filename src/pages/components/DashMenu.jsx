@@ -27,7 +27,7 @@ function DashMenu() {
             
             <Nav.Link href="#action2" onClick={handleShow}>Sidebar </Nav.Link>
             <NavDropdown title="Sites" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Sites</NavDropdown.Item>
+              <NavDropdown.Item href="/dashboard/sites">Sites</NavDropdown.Item>
               <NavDropdown.Item href="/dashboard/new-site">
                 New Site
               </NavDropdown.Item>
@@ -36,7 +36,7 @@ function DashMenu() {
                 Something else here
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="dashboard/profile">
+            <Nav.Link href="/dashboard/profile">
                 Profile
             </Nav.Link>
           </Nav>

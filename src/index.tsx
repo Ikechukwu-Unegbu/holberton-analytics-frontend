@@ -43,7 +43,7 @@ root.render(
         <Route path="/admin" element={<ProtectedRoute user={{}}><AdminHome/></ProtectedRoute>} />
         <Route path="/admin/sites" element={<ProtectedRoute user={{}}><Sites/></ProtectedRoute>} />
         <Route path="/admin/users" element={<ProtectedRoute user={{}}><Users users={[]}/></ProtectedRoute>} />
-        <Route path="/admin/user/:id" element={<ProtectedRoute user={{}}><User/></ProtectedRoute>} />
+        <Route path="/admin/user/:userid" element={<ProtectedRoute user={{}}><User/></ProtectedRoute>} />
         <Route path="/admin/search" element={<ProtectedRoute user={{}}><Search/></ProtectedRoute>} />
 
       </Routes>
