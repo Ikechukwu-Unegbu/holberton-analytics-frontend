@@ -1,3 +1,5 @@
+// const { request } = require("http");
+
 console.log("This site tracked by Holberton Analytics.")
 
   
@@ -9,7 +11,7 @@ let long;
 let lat; 
 let accountIdentifier;
 let siteIdentifier;
-
+let page_title;
 
 
 function getRequestOrigin() {
@@ -72,9 +74,10 @@ window.addEventListener('load', function() {
     // Retrieve the account and website identifiers from data attributes
     accountIdentifier = scriptElement.getAttribute('data-account-id');
     siteIdentifier = scriptElement.getAttribute('data-website-id');
-    console.log('userid:',accountIdentifier)
-    console.log('siteid:',accountIdentifier)
+    // console.log('userid:',accountIdentifier)
+    // console.log('siteid:',accountIdentifier)
 
+    page_title= document.title
 
 
 
@@ -193,6 +196,8 @@ window.addEventListener('load', function() {
             url = 'register-load/'+accountIdentifier+'/'+siteIdentifier
         }else if(type == 'events'){
             url = 'register-event/'+accountIdentifier+'/'+siteIdentifier
+        }else if(type == 'unload'){
+          url = 'register-unload/'+accountIdentifier+'/'+siteIdentifier
         }
       fetch('http://localhost:5000/'+url, {
         method: 'POST',
@@ -240,25 +245,11 @@ window.addEventListener('load', function() {
       };
       sendEventToAnalytics(eventData, 'load');
     }
-  
-    // Track click event
-    function trackClickEvent(event) {
-      var target = event.target;
-      var eventData = {
-        eventType: 'click',
-        targetElement: target.tagName,
-        targetText: target.innerText,
-        pageURL: window.location.href,
-        
-        timestamp: new Date().toISOString(),
-      };
-     
-    }
-  
+   
     // Attach event listeners to track page view and click events
     trackPageView()
-    // window.addEventListener('load', trackPageView);
-    // localStorage.clear();
+
+   
     
 });
   
@@ -266,26 +257,88 @@ window.addEventListener('load', function() {
 
 
 window.addEventListener('beforeunload', function(event) {
-    const pageUnloadTime = performance.now();
-    const timeSpent = (pageUnloadTime - pageLoadTime) / 60000; // Convert milliseconds to minutes
-    requestDuration = timeSpent.toFixed(2)
-    
-    if (typeof event.returnValue === 'undefined') {
-      // Modern browsers support setting a custom message
-      event.preventDefault(); // Prevent the default dialog
-      const destinationUrl = event.currentTarget.location.href;
-      // Capture the URL or assign a default value
-      console.log('User is navigating to:', destinationUrl);
-      
-      // Determine if the user is closing the tab or the browser entirely
-      const isClosingTab = !event.clientY; // If the `clientY` property is not set, it indicates closing the tab
-      if (isClosingTab) {
-        console.log('User is closing the tab');
-      } else {
-        console.log('User is closing the browser');
-      }
-      
-      
+    // event.preventDefault()
+    accountIdentifier = scriptElement.getAttribute('data-account-id');
+    siteIdentifier = scriptElement.getAttribute('data-website-id');
+   
+  
+    const eventData = {
+      requestId:requestId
     }
+    
+    const url = `http://localhost:5000/register-unload/${accountIdentifier}/${siteIdentifier}`;
+    
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(eventData)
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Response:', data);
+        // Handle the response data here
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        // Handle any errors that occurred during the request
+      });
+     
+
+      // Set a custom message to display in the confirmation dialog (optional)
+      // event.returnValue = 'Are you sure you want to leave this page?';
   });
   
+
+
+
+// Function to handle the click event
+function handleClick(event) {
+  // Get the necessary data about the click event
+  const timestamp = new Date();
+  const page_title = document.title;
+  const pageURL = window.location.href;
+  const referrerURL = document.referrer;
+  requestId = requestId
+  const clickCoordinates = {
+    x: event.clientX,
+    y: event.clientY
+  };
+  const elementID = event.target.id;
+  const elementText = event.target.innerText; // Capture the inner text of the clicked element
+  const eventType = 'click'; // You can customize the event type as needed
+
+  // Create an object to store the captured data
+  const eventData = {
+    timestamp,
+    pageURL,
+    page_title,
+    clickCoordinates,
+    elementID,
+    elementText,
+    eventType,
+    requestId
+  };
+
+  // Make an API call to send the eventData to the server
+  // Replace 'http://localhost/api/events' with your actual API endpoint
+  fetch('http://localhost:5000/register-event/'+accountIdentifier+'/'+siteIdentifier, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(eventData)
+  })
+    .then(response => response.json())
+    .then(data => {
+      // Handle the response from the server if needed
+    })
+    .catch(error => {
+      // Handle any errors that occurred during the API call
+      console.error('Error:', error);
+    });
+}
+
+// Add event listener to capture click events on the document
+document.addEventListener('click', handleClick);

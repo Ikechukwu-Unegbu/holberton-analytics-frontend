@@ -22,19 +22,19 @@ function DashMenu() {
           <Nav
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: '100px' }}
-            navbarScroll
+            navbarScroll 
           >
             
-            <Nav.Link href="#action2" onClick={handleShow}>Sidebar </Nav.Link>
+            <Nav.Link href="/dashboard" onClick={handleShow}>Dashboard </Nav.Link>
             <NavDropdown title="Sites" id="navbarScrollingDropdown">
               <NavDropdown.Item href="/dashboard/sites">Sites</NavDropdown.Item>
               <NavDropdown.Item href="/dashboard/new-site">
                 New Site
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
+              {/* <NavDropdown.Item href="#action5">
                 Something else here
-              </NavDropdown.Item>
+              </NavDropdown.Item> */}
             </NavDropdown>
             <Nav.Link href="/dashboard/profile">
                 Profile

@@ -1,9 +1,10 @@
 import React from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 
-function SitesDropdown({ sitelists, onSiteSelect }) {
-  const handleItemClick = (value) => {
-    onSiteSelect(value);
+function SitesDropdown({ sitelists, onSiteSelect,getSiteName }) {
+  const handleItemClick = (_id, name) => {
+    onSiteSelect(_id);
+    getSiteName(name)
   };
 
   return (
@@ -18,7 +19,7 @@ function SitesDropdown({ sitelists, onSiteSelect }) {
             key={site._id}
             id={site._id}
             href={`#${site._id}`}
-            onClick={() => handleItemClick(site._id)}
+            onClick={() => handleItemClick(site._id,site.name)}
           >
             {site.name}
           </Dropdown.Item>
