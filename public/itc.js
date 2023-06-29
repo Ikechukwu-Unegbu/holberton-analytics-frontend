@@ -155,7 +155,7 @@ window.addEventListener('load', function() {
     
         // Set the visitor ID and expiration in a cookie or local storage
         // Example using local storage:
-        localStorage.setItem('visitorID', visitorID);
+        localStorage.setItem(siteIdentifier, visitorID);
         localStorage.setItem('expirationDate', expirationDate.toISOString());
     }
   

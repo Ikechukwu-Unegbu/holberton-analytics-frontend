@@ -23,6 +23,7 @@ import Sites from './admin/sites/Sites';
 import User from './admin/users/User';
 import ProtectedRoute from './ProtectedRoute';
 import SiteList from './pages/dashboard/sites/SiteList';
+import Logout from './pages/Logout';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -35,6 +36,7 @@ root.render(
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/register' element={<Register/>}></Route>
         <Route path='/' element={<Home/>}></Route>
+        <Route path='/logout' element={<Logout/>}></Route>
         
         <Route path="/dashboard" element={<ProtectedRoute user={{}}><Dashboard/></ProtectedRoute>} />
         <Route path="/dashboard/profile" element={<ProtectedRoute user={{}}><Profile/></ProtectedRoute>} />

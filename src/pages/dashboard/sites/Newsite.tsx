@@ -80,8 +80,14 @@ const Newsite: React.FC<NewsiteProps> = (props) => {
       <div className="container p-4">
         <form onSubmit={handleSubmit}>
           <div className="form-group mt-2">
-            <h4 className="text-dark text-center">Add Site to Track</h4>
+            <h4 className="text-dark text-center alert-success">Add Site to Track</h4>
           </div>
+          <div className="contianer">
+            {message && <div className='alert-success success-message'>
+              <h4 className="text-center">{message}</h4>
+              </div>}
+          </div>
+          <br />
           <div className="container">
             <Link className='btn btn-sm btn-primary' style={{float:'right'}} to="/dashboard/sites">My Site List</Link>
           </div>
@@ -131,7 +137,7 @@ const Newsite: React.FC<NewsiteProps> = (props) => {
             </button>
           </div>
         </form>
-        {message && <p>{message}</p>}
+        
       </div>
     </div>
   );
